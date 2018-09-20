@@ -37,59 +37,27 @@ const meetings = [
     }
   ]
 
-console.log(meetings)
+console.log(meetings[0]["id"])
 
 // test send
 router.get("/", (req, res) => {
   res.send(meetings) // returns object in meetings
 })
 
+// // Get a Users Meeting Histroy
+// router.get("/", (req, res) => {
+  //
+// })
+
+// // Save a completed meeting
 // router.post("/", (req, res) => {
 //   // 
 // })
 
-router.get("/:id/users", (req, res) => {
-  // 
-})
-
-
-
+// // Get the attendees of a Meeting
+// router.get("/:id/users", (req, res) => {
+//   // 
+// })
 
 
 module.exports = router
-
-// // router.get('/api/meetings', (req, res) => {
-// //     db.getMeetings().then((meetings) => {
-// //         res.json(meetings)
-// //     })
-// // })
-
-// // router.get('/api/meetings/:id', (req, res) => {
-// //     db.getMeetingsById(req.params.id).then((meetings) => {
-// //         res.json(meetings)
-// //     })
-// // })
-
-// // router.get('/api/meetings/:meeting_name', (req, res) => {
-// //     db.getMeetingsByName(req.params.meeting_name)
-// //     .then((meetings) => {
-// //         res.json(meetings)
-// //     })
-// // })
-
-// // router.post('/api/meetings', (req, res) => {
-
-// //     db.getMeetings().then((meetings) => {
-// //         res.json(meetings)
-// //     })
-// // // })
-
-
-
-// // router.get('/:id', (req, res) => {
-// //     db.getMeetingsById(meetings.id).then((meetings) => {
-// //         res.send(meetings)
-// //     })
-
-
-// // })
