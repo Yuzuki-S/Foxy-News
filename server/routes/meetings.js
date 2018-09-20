@@ -1,6 +1,12 @@
 const router = require("express").Router()
 // const {functionsfromDB} = require('../db/meetings')
 
+// -------------------------------- Test content - working in Postman
+// Get a Users Meeting Histroy
+router.get("/", (req, res) => {
+  res.json(meetings)
+})
+
 // Test content
 const meetings = [
     {
@@ -44,26 +50,29 @@ const meetings = [
 // })
 
 
-// Get a Users Meeting Histroy
-router.get("/", (req, res) => {
-  db.getMeetings()
-  .then((meetings) => {
-      res.json(meetings)
-  })  
-})
 
-// Save a completed meeting
-router.post("/", (req, res) => {
-  // placeholder
-})
+// -------------------------------- Proper routes - currently waiting on db functions and promises
 
-// Get the attendees of a Meeting
-router.get("/:id/users", (req, res) => {
-  db.getMeetingsById(req.params.id)
-  .then((meetings) => { 
-//to be id of meeting used to return meeting users?
-      res.json(meetings)
-  })
-})
+// // Get a Users Meeting Histroy
+// router.get("/", (req, res) => {
+//   db.getMeetings()
+//   .then((meetings) => {
+//       res.json(meetings)
+//   })  
+// })
+
+// // Save a completed meeting
+// router.post("/", (req, res) => {
+//   // placeholder
+// })
+
+// // Get the attendees of a Meeting
+// router.get("/:id/users", (req, res) => {
+//   db.getMeetingsById(req.params.id)
+//   .then((meetings) => { 
+// //to be id of meeting used to return meeting users?
+//       res.json(meetings)
+//   })
+// })
 
 module.exports = router
