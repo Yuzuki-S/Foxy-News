@@ -5,8 +5,7 @@ export default function userRed(state = [], action) {
   
   switch (action.type) {
     case 'SET_ALL_USERS':
-    
-      return {
+        return {
         totalUsers: action.allUsers
       }
     default:
