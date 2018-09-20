@@ -44,7 +44,7 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
       "attendees" : [
         {
           "userId" : 1234,
-        "userName" : "handle name"
+        "userName" : "handle name",
         "firstName" : "Name",
         "lastName" : "Name",
           "personCostPerHour" : 100.00,
@@ -68,7 +68,7 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
   "attendees" : [
     {
       "userId" : 1234,
-      "userName" : "handle name"
+      "userName" : "handle name",
       "firstName" : "Name",
       "lastName" : "Name",
     }
@@ -91,7 +91,7 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
   "attendees" : [
     {
       "id" : 1234,
-      "userName" : "handle name"
+      "userName" : "handle name",
       "firstName" : "Name",
       "lastName" : "Name",
       "personCostPerHour" : 100.00,
@@ -115,14 +115,14 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
   [
     {
       "id" : 1234,
-      "userName" : "handle name"
+      "userName" : "handle name",
       "firstName" : "Name",
       "lastName" : "Name",
       "personCostPerHour" : 100.00,
     },
     {
       "id" : 5678,
-      "userName" : "handle name"
+      "userName" : "handle name",
       "firstName" : "Name",
       "lastName" : "Name",
       "personCostPerHour" : 100.00,
@@ -140,14 +140,14 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
   [
     {
       "id" : 1234,
-      "userName" : "handle name"
+      "userName" : "handle name",
       "firstName" : "Name",
       "lastName" : "Name",
       "personCostPerHour" : 100.00,
     },
     {
       "id" : 5678,
-      "userName" : "handle name"
+      "userName" : "handle name",
       "firstName" : "Name",
       "lastName" : "Name",
       "personCostPerHour" : 100.00,
