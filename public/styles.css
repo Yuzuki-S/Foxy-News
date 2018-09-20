@@ -1,21 +1,26 @@
-
-.main_LeftSideBar{
+.main_LeftSideBar {
   border: 1px black solid;
   width: 30%;
 }
 
-.right_mainLayout_container{
+.right_mainLayout_container {
   border: 1px black solid;
   width: 60%;
   float: right;
-
 }
 
 /* App Styles */
 /* *********** */
 #App_firstcontainer {
   max-width: 40%;
-  padding-top: 1.3%;
+  padding-top: 0%;
+  margin: 2% auto 0%;
+}
+
+#app_secondcontainer {
+  max-width: 40%;
+  padding-top: 0%;
+  margin: 0% auto;
 }
 
 #App_Hero {
@@ -131,5 +136,9 @@
 /* *********** */
 
 #Login_btn {
+  background-color: #2ec4b6;
+}
+
+#register_submit {
   background-color: #2ec4b6;
 }

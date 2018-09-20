@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../actions/logout";
 
-class Nav extends React.Component {
+class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -99,4 +99,4 @@ const mapStateToProps = ({ auth }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Nav);
+)(Navbar);
