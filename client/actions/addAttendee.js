@@ -10,8 +10,10 @@ export const addAttendee = user => {
 export function getMeeting(id) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
-
-    return request("get", "api/meetings/1/users", id)
+    let obj = {
+      id: id
+    };
+    return request("get", "meetings/1/users", obj)
       .then(response => {
         if (!response.ok) {
           console.log("broken");
