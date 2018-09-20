@@ -12,7 +12,15 @@ import Help from "./Help";
 const App = ({ auth }) => (
   <Router>
     <div id="App_firstcontainer" className="container has-text-centered">
-      <div className="hero is-small is-primary">
+      <section id="App_video" class="hero is-fullheight video">
+        <div class="hero-video">
+          <video id="bgvid" playsInline autoPlay muted loop>
+            <source src="./video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <div id="App_Hero" className="hero is-small is-primary">
         <div className="hero-body has-text-centered">
           <Link to="/" className="">
             <h1 id="App_title" className="title is-1">
