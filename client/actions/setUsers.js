@@ -24,7 +24,3 @@ export function setAllUsers (users){
     allUsers: users
   }
 }
-
-  
-
-

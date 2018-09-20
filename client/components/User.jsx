@@ -9,8 +9,11 @@ console.log(props)
 
   return(
     <div>
-      {props.person.user_name}
-      ${props.person.hourly_wage}
+      
+      {props.person.user_name}, 
+      ${props.person.hourly_wage}, 
+      {props.person.first_name}
+      
     </div>
   )
 
