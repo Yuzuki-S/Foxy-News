@@ -18,6 +18,7 @@ class History extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.allMeetings();
   }
 

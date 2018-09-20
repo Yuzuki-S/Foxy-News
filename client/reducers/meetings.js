@@ -1,7 +1,7 @@
 const meetings = (state = [], action) => {
   switch (action.type) {
     case "MEETING_REQ":
-      return [...state];
+      return [];
     case "MEETING_RES":
       return [...state, action.meeting];
 
