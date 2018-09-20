@@ -5,9 +5,12 @@ import Navbar from "./Navbar";
 class History extends React.Component {
   render() {
     return (
-      <div>
+   <div>
+        <div id="histry_nav">
         <div id="Help_content" class="columns">
+           
           <Navbar />
+              </div>
         </div>
         <section className="hero is-primary">
           <div className="hero-body">
