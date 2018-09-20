@@ -1,7 +1,20 @@
 import React from "react";
+import { connect } from "react-redux";
+import { getMeeting } from "../actions/addAttendee";
 
 class HistoricMeeting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.props.getMeeting(1);
+  }
+
   render() {
+    console.log(this.props);
+
     return (
       <div id="historycontainer">
         <div className="tile is-parent">
@@ -10,6 +23,7 @@ class HistoricMeeting extends React.Component {
             <p className="subtitle">
               <i className="fas fa-arrow-left" /> Select a meeting from the left
             </p>
+            {/* <p>{this.props.meetings}</p> */}
             <div className="content" />
           </article>
         </div>
@@ -18,4 +32,19 @@ class HistoricMeeting extends React.Component {
   }
 }
 
-export default HistoricMeeting;
+const mapStateToProps = state => {
+  return {
+    meetings: state
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getMeeting: num => dispatch(getMeeting(num))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HistoricMeeting);
