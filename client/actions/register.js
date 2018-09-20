@@ -3,8 +3,6 @@ import { saveUserToken } from "../utils/auth";
 import { receiveLogin, loginError } from "./login";
 
 export function registerUserRequest(creds) {
-  console.log(creds);
-
   return dispatch => {
     request
       .post("/api/auth/register")

@@ -1,6 +1,32 @@
+
 API documentation: currently seeking feedback! Talk to Lianna or Emil if anything urgent is missing
 
 # Request and response formats
+
+## POST /api/auth/register
+### Request
+```sh
+[
+  {
+  "userName" : "memelord69",
+  "firstName" : "Thing",
+  "lastName" : "Trundell",
+  "password" : "sosecret",
+  "personCostPerHour" : 100
+}
+]
+```
+
+## POST /api/auth/login
+### Request
+```sh
+[
+  {
+  "userName" : "memelord69",
+  "password" : "sosecret",
+}
+]
+```
 
 ## GET /api/meetings
 ### Response:
@@ -10,14 +36,16 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
   {
     "id" : 1,
     "meetingName" : "This meeting's name",
-    "attendeesList" : [
+    "attendees" : [
       {
         "userId" : 1234,
-        "userName" : "Emil",
+      "userName" : "handle name"
+      "firstName" : "Name",
+      "lastName" : "Name",
         "personCostPerHour" : 100.00,
       }
     ],
-    "dateAndTimeOfMeeting": "date and time",
+    "time": timestamp
     "meetingCostPerHour" : 250.00,
     "totalMeetingTimeSeconds" : 360,
     "totalCostOfMeeting" : 6000.00
@@ -30,20 +58,22 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
 <!-- Usage: Save a completed meeting -->
 ```sh
 {
-  "meeting_name" : "This meeting's name",
-  "attendees_list" : [
+  "meetingName" : "This meeting's name",
+  "attendees" : [
     {
-      "user_id" : 1234,
-      "user_name" : "Emil",
-      "person_cost_per_hour" : 100.00,
+      "userId" : 1234,
+      "userName" : "handle name"
+      "firstName" : "Name",
+      "lastName" : "Name",
     }
   ],
-  "date_and_time_of_meeting" : "date and time",
-  "meeting_cost_per_hour" : 250.00,
-  "total_meeting_time_seconds" : 360,
-  "total_cost_of_meeting" : 6000.00
+  "time" : "date and time",
+  "meetingCostPerHour" : 250.00,
+  "totalMeetingTimeSeconds" : 360,
+  "totalCostOfMeeting" : 6000.00
 }
 ```
+
 
 ### Response:
   <!-- The Meeting that has been saved in db read format -->
@@ -52,14 +82,16 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
 {
   "id" : 3000,
   "meetingName" : "This meeting's name",
-  "attendeesList" : [
+  "attendees" : [
     {
-      "useId" : 1234,
-      "userName" : "Emil",
+      "id" : 1234,
+      "userName" : "handle name"
+      "firstName" : "Name",
+      "lastName" : "Name",
       "personCostPerHour" : 100.00,
-    }
+    },
   ],
-  "dateAndTimeOfMeeting": "date and time",
+  "time": timestamp
   "meetingCostPerHour" : 250.00,
   "totalMeetingTimeSeconds" : 360,
   "totalCostOfMeeting" : 6000.00
@@ -75,16 +107,19 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
 ```sh
 [
   {
-    "id" : 1234,  <!-- user id -->
-    "userName" : "Emil",
+    "id" : 1234,
+    "userName" : "handle name"
+    "firstName" : "Name",
+    "lastName" : "Name",
     "personCostPerHour" : 100.00,
   },
   {
-    "id" : 0987,  <!-- user id -->
-    "userName" : "Lianna",
-    "personCostPerHour" : 200.00,
+    "id" : 5678,
+    "userName" : "handle name"
+    "firstName" : "Name",
+    "lastName" : "Name",
+    "personCostPerHour" : 100.00,
   },
-
 ]
 ```
 
@@ -95,15 +130,18 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
 ```sh
 [
   {
-    "id" : 1234,  <!-- user id -->
-    "userName" : "Emil",
+    "id" : 1234,
+    "userName" : "handle name"
+    "firstName" : "Name",
+    "lastName" : "Name",
     "personCostPerHour" : 100.00,
   },
   {
-    "id" : 0987,  <!-- user id -->
-    "userName" : "Lianna",
-    "personCostPerHour" : 200.00,
+    "id" : 5678,
+    "userName" : "handle name"
+    "firstName" : "Name",
+    "lastName" : "Name",
+    "personCostPerHour" : 100.00,
   },
-
 ]
 ```
