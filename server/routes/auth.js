@@ -3,6 +3,13 @@ var router = require('express').Router()
 var {userExists, createUser} = require('../db/users')
 var token = require('../auth/token')
 
+
+router.get('/', test, token.issue)
+
+function test(req, res){
+  res.send("Test route")
+}
+
 router.post('/register', register, token.issue)
 
 function register (req, res, next) {
