@@ -3,7 +3,8 @@ var router = require("express").Router();
 var {
   getUserMeetingHistory,
   getMeetingInfo,
-  saveMeeting
+  saveMeeting,
+  getAllMeetings
 } = require("../db/meetings");
 
 let { getUsers } = require("../db/users");
@@ -18,6 +19,14 @@ function getMeetings(req, res, next) {
     Promise.all(arr).then(info => {
       res.json(info);
     });
+  });
+}
+
+router.get("/allmeetings", getAllMeetingsAPI);
+
+function getAllMeetingsAPI(req, res, next) {
+  getAllMeetings().then(data => {
+    res.json(data);
   });
 }
 

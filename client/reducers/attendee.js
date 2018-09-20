@@ -4,10 +4,6 @@ const addAttendee = (state = [], action) => {
       console.log(action);
       return [...state, action];
 
-    case "GET_MEETING":
-      console.log("reducer");
-      return [...state, action];
-
     default:
       return state;
   }

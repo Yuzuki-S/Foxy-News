@@ -211,3 +211,7 @@
 .hero.is-primary {
   background-color: rgb(231, 147, 147);
 }
+
+#attendeesviewcontainer {
+  margin-top: 10%;
+}

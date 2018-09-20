@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getMeeting } from "../actions/addAttendee";
+import { getMeeting } from "../actions/meetings";
 
 class HistoricMeeting extends React.Component {
   constructor(props) {
@@ -8,9 +8,7 @@ class HistoricMeeting extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.getMeeting(1);
-  }
+  componentDidMount() {}
 
   render() {
     console.log(this.props);
