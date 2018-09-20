@@ -143,6 +143,7 @@
   background-color: #2ec4b6;
 }
 
+
 .navbar_nav  {
   background-color: #2ec4b6;
 
@@ -150,4 +151,18 @@
 
 .navbar-item {
   color:white;
+
+/* History styles */
+/* *********** */
+
+#history_container {
+  margin-top: 2%;
+  display: flex;
+}
+
+#h_left {
+}
+
+#h_right {
+
 }
