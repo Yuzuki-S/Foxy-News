@@ -1,21 +1,26 @@
-
-.main_LeftSideBar{
+.main_LeftSideBar {
   border: 1px black solid;
   width: 30%;
 }
 
-.right_mainLayout_container{
+.right_mainLayout_container {
   border: 1px black solid;
   width: 60%;
   float: right;
-
 }
 
 /* App Styles */
 /* *********** */
 #App_firstcontainer {
   max-width: 40%;
-  padding-top: 1.3%;
+  padding-top: 0%;
+  margin: 2% auto 0%;
+}
+
+#app_secondcontainer {
+  max-width: 40%;
+  padding-top: 0%;
+  margin: 0% auto;
 }
 
 #App_Hero {
@@ -114,7 +119,6 @@
   background-color: white;
   border: 1px solid rgb(181, 250, 181);
   border-radius: 4px;
-  padding: 5px;
 }
 
 #Help_head {
@@ -124,7 +128,13 @@
 
 #Help_body {
   text-align: left;
-  padding: 10px;
+  padding: 3% 20%;
+  font-size: 25px;
+}
+
+#help_box {
+  max-width: 70%;
+  margin: auto;
 }
 
 /* Login styles */
@@ -132,4 +142,72 @@
 
 #Login_btn {
   background-color: #2ec4b6;
+}
+
+#register_submit {
+  background-color: #2ec4b6;
+}
+
+.navbar_nav {
+  background-color: #2ec4b6;
+}
+
+.navbar-item {
+  color: white;
+}
+/* History styles */
+/* *********** */
+
+#history_container {
+  margin-top: 2%;
+  display: flex;
+}
+
+#h_left {
+  width: 30%;
+  height: 80vh;
+  background-color: rgb(35, 211, 211);
+  margin-bottom: 3%;
+  margin-right: 2%;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#h_right {
+  width: 70%;
+  height: 80vh;
+  padding: 0px;
+  margin: 0;
+}
+
+#hero_history {
+  max-height: 10%;
+  padding-top: 0px;
+}
+
+#hero_body {
+  padding: 1%;
+}
+
+#historycontainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#title_history {
+  padding-top: 2.5%;
+  text-align: center;
+}
+
+#history_meeting {
+  margin-top: 1.5%;
+}
+
+.tile.is-parent {
+  padding: 0 !important;
+}
+
+.hero.is-primary {
+  background-color: rgb(231, 147, 147);
 }

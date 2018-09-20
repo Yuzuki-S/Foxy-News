@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { registerUserRequest } from "../actions/register";
 import { loginError } from "../actions/login";
-
+import LoginNav from "./LoginNav";
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -43,91 +43,99 @@ class Register extends React.Component {
   render() {
     const { auth } = this.props;
     return (
-      <form className="Register form box" onSubmit={this.submit}>
-        <h1 className="title is-2">Register</h1>
-        <hr />
-        {auth.errorMessage && (
-          <span className="has-text-danger is-large">{auth.errorMessage}</span>
-        )}
-        <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">
-          Username
-          <input
-            required
-            className="input is-large has-text-centered is-fullwidth"
-            placeholder="User Name"
-            type="text"
-            name="user_name"
-            onChange={this.updateDetails}
-          />
-        </label>
-        <div className="columns">
-          <label className="column is-6 label is-large has-text-centered">
-            First Name
+      <div>
+        <LoginNav />
+        <div id="app_secondcontainer">
+          <form className="Register form box" onSubmit={this.submit}>
+            <h1 className="title is-2 has-text-centered">Register</h1>
+            <hr />
+            {auth.errorMessage && (
+              <span className="has-text-danger is-large">
+                {auth.errorMessage}
+              </span>
+            )}
+            <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">
+              Username
+              <input
+                required
+                className="input is-large has-text-centered is-fullwidth"
+                placeholder="User Name"
+                type="text"
+                name="user_name"
+                onChange={this.updateDetails}
+              />
+            </label>
+            <div className="columns">
+              <label className="column is-6 label is-large has-text-centered">
+                First Name
+                <input
+                  required
+                  className="input is-large has-text-centered is-fullwidth"
+                  placeholder="First Name"
+                  type="text"
+                  name="first_name"
+                  onChange={this.updateDetails}
+                />
+              </label>
+              <label className="column is-6 label is-large has-text-centered">
+                Last Name
+                <input
+                  required
+                  className="input is-large has-text-centered is-fullwidth"
+                  placeholder="Last Name"
+                  type="text"
+                  name="last_name"
+                  onChange={this.updateDetails}
+                />
+              </label>
+            </div>
+            <br />
+            <div className="columns">
+              <label className="column is-6 label is-large has-text-centered">
+                Password
+                <input
+                  required
+                  className="input is-large has-text-centered is-fullwidth"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  onChange={this.updateDetails}
+                />
+              </label>
+              <label className="column is-6 label is-large has-text-centered">
+                Confirm Password
+                <input
+                  required
+                  className="input is-large has-text-centered is-fullwidth"
+                  placeholder="Confirm Password"
+                  type="password"
+                  name="confirm_password"
+                  onChange={this.updateDetails}
+                />
+              </label>
+            </div>
+            <div className="columns">
+              <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">
+                Hourly Rate
+                <input
+                  required
+                  className="input is-large has-text-centered is-fullwidth"
+                  placeholder="Hourly Rate"
+                  type="number"
+                  name="hourly_wage"
+                  onChange={this.updateDetails}
+                />
+              </label>
+            </div>
             <input
-              required
-              className="input is-large has-text-centered is-fullwidth"
-              placeholder="First Name"
-              type="text"
-              name="first_name"
-              onChange={this.updateDetails}
+              id="register_submit"
+              className="button is-success is-large is-fullwidth"
+              value="Register"
+              type="submit"
             />
-          </label>
-          <label className="column is-6 label is-large has-text-centered">
-            Last Name
-            <input
-              required
-              className="input is-large has-text-centered is-fullwidth"
-              placeholder="Last Name"
-              type="text"
-              name="last_name"
-              onChange={this.updateDetails}
-            />
-          </label>
+          </form>
         </div>
-        <br />
-        <div className="columns">
-          <label className="column is-6 label is-large has-text-centered">
-            Password
-            <input
-              required
-              className="input is-large has-text-centered is-fullwidth"
-              placeholder="Password"
-              type="password"
-              name="password"
-              onChange={this.updateDetails}
-            />
-          </label>
-          <label className="column is-6 label is-large has-text-centered">
-            Confirm Password
-            <input
-              required
-              className="input is-large has-text-centered is-fullwidth"
-              placeholder="Confirm Password"
-              type="password"
-              name="confirm_password"
-              onChange={this.updateDetails}
-            />
-          </label>
-        </div>
-        <div className="columns">
-          <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">
-            Hourly Rate
-            <input
-              required
-              className="input is-large has-text-centered is-fullwidth"
-              placeholder="Hourly Rate"
-              type="number"
-              name="hourly_wage"
-              onChange={this.updateDetails}
-            />
-          </label>
-        </div>
-        <input
-          className="button is-success is-large is-fullwidth"
-          value="Register"
-          type="submit"
-        />
-      </form>
+      </div>
     );
   }
 }
