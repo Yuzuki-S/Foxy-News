@@ -1,27 +1,27 @@
-import { removeUser } from '../utils/auth'
+import { removeUser } from "../utils/auth";
 
-function requestLogout () {
+function requestLogout() {
   return {
-    type: 'LOGOUT_REQUEST',
+    type: "LOGOUT_REQUEST",
     isFetching: true,
     isAuthenticated: true
-  }
+  };
 }
 
-function receiveLogout () {
+function receiveLogout() {
   return {
-    type: 'LOGOUT_SUCCESS',
+    type: "LOGOUT_SUCCESS",
     isFetching: false,
     isAuthenticated: false
-  }
+  };
 }
 
 // Logs the user out
-export function logoutUser () {
+export function logoutUser() {
   return dispatch => {
-    document.location = "/#/"
-    dispatch(requestLogout())
-    removeUser()
-    dispatch(receiveLogout())
-  }
+    document.location = "/login";
+    dispatch(requestLogout());
+    removeUser();
+    dispatch(receiveLogout());
+  };
 }

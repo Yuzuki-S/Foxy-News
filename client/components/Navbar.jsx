@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../actions/logout";
 
-class Nav extends React.Component {
+class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class Nav extends React.Component {
     const { auth, logout } = this.props;
     const { showBurger } = this.state;
     return (
-      <nav className="navbar">
+      <nav className="navbar_nav">
         <div className="container">
           <div className="navbar-brand">
             <Link
@@ -43,41 +43,42 @@ class Nav extends React.Component {
               onClick={this.toggleBurger}
               className={`navbar-burger burger ${
                 showBurger ? "is-active" : ""
-              }`}
+                }`}
               data-target="navbarMenuHeroA"
             >
               <span />
               <span />
               <span />
             </span>
-          </div>
-          <div
-            id="navbarMenuHeroA"
-            className={`navbar-menu ${showBurger ? "is-active" : ""}`}
-          >
-            <div className="navbar-end">
-              {auth.isAuthenticated ? (
-                <Link to="/" className="navbar-item" onClick={() => logout()}>
-                  Logout
+
+            <div
+              id="navbarMenuHeroA"
+              className={`navbar-menu ${showBurger ? "is-active" : ""}`}
+            >
+              <div className="navbar-end">
+                {auth.isAuthenticated ? (
+                  <Link to="/" className="navbar-item" onClick={() => logout()}>
+                    Logout
                 </Link>
-              ) : (
-                [
-                  <Link
-                    onClick={this.toggleBurger}
-                    className="navbar-item is-large"
-                    to="/login"
-                  >
-                    Login
+                ) : (
+                    [
+                      <Link
+                        onClick={this.toggleBurger}
+                        className="navbar-item is-large"
+                        to="/login"
+                      >
+                        Login
                   </Link>,
-                  <Link
-                    onClick={this.toggleBurger}
-                    className="navbar-item"
-                    to="/register"
-                  >
-                    Register
+                      <Link
+                        onClick={this.toggleBurger}
+                        className="navbar-item"
+                        to="/register"
+                      >
+                        Register
                   </Link>
-                ]
-              )}
+                    ]
+                  )}
+              </div>
             </div>
           </div>
         </div>
@@ -99,4 +100,4 @@ const mapStateToProps = ({ auth }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Nav);
+)(Navbar);
