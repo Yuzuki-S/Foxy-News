@@ -119,7 +119,7 @@
   background-color: white;
   border: 1px solid rgb(181, 250, 181);
   border-radius: 4px;
-  padding: 5px;
+
 }
 
 #Help_head {
@@ -141,4 +141,13 @@
 
 #register_submit {
   background-color: #2ec4b6;
+}
+
+.navbar_nav  {
+  background-color: #2ec4b6;
+
+}
+
+.navbar-item {
+  color:white;
 }

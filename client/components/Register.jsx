@@ -47,7 +47,7 @@ class Register extends React.Component {
         <LoginNav />
         <div id="app_secondcontainer">
           <form className="Register form box" onSubmit={this.submit}>
-            <h1 className="title is-2">Register</h1>
+            <h1 className="title is-2 has-text-centered">Register</h1>
             <hr />
             {auth.errorMessage && (
               <span className="has-text-danger is-large">
