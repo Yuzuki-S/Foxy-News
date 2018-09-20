@@ -1,13 +1,12 @@
-import {ADD_USER} from '../actions/addAttendee'
-
 const addAttendee = (state = [], action) => {
   switch (action.type) {
     case 'ADD_USER':
-    console.log(action)
-    return [...state, action]
-    default:
-    return state 
-  }
-}
+      //adding the whole action for now as an example - currently being worked on
+      return [...state, action];
 
-export default addAttendee
+    default:
+      return state;
+  }
+};
+
+export default addAttendee;
