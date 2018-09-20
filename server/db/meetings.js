@@ -43,15 +43,20 @@ function saveMeeting(meeting) {
       cost: meeting.totalCostOfMeeting
     })
     .then(id => {
+      meeting.id = id[0];
+      let arr = [];
       meeting.attendees.forEach(attendee => {
-        console.log(attendee.userId);
-        createAttendee(attendee.userId, id[0]);
+        arr.push(createAttendee(attendee.userId, id[0]));
+      });
+      return Promise.all(arr).then(() => {
+        //console.log(meeting);
+        return meeting;
       });
     });
 }
 
 function createAttendee(user_id, meeting_id) {
-  console.log('create attendee');
+  //console.log('create attendee');
   return db('attendees').insert({
     user_id: user_id,
     meeting_id: meeting_id

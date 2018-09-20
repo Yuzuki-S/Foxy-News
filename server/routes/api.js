@@ -25,6 +25,7 @@ function saveMeetingAPI(req, res, next) {
   //console.log(req.body);
   saveMeeting(req.body).then(data => {
     //console.log(data);
+    res.json(data);
   });
 }
 
