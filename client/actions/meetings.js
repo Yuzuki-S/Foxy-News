@@ -60,11 +60,12 @@ export function getMeeting(id) {
     let obj = {
       id: id
     };
-    return request("get", `meetings/${id}`, obj)
+    return request("get", `meetings/${id}/users`, obj)
       .then(response => {
         if (!response.ok) {
         } else {
-          dispatch(meetingRes(response.body));
+          console.log(response.body);
+          dispatch(meetingRes(response.body.attendees));
         }
       })
       .catch(err => dispatch(loginError(err.response.body.message)));

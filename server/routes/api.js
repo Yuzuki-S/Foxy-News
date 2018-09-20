@@ -43,7 +43,7 @@ function saveMeetingAPI(req, res, next) {
 router.get("/meetings/:id/users", getMeetingAttendees);
 
 function getMeetingAttendees(req, res, next) {
-  getMeetingInfo(1).then(info => {
+  getMeetingInfo(req.params.id).then(info => {
     res.json(info);
   });
 }
