@@ -6,51 +6,57 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
 ## POST /api/auth/register
 ### Request
 ```sh
-[
-  {
-  "userName" : "memelord69",
-  "firstName" : "Thing",
-  "lastName" : "Trundell",
-  "password" : "sosecret",
-  "personCostPerHour" : 100
+{
+  [
+    {
+    "userName" : "memelord69",
+    "firstName" : "Thing",
+    "lastName" : "Trundell",
+    "password" : "sosecret",
+    "personCostPerHour" : 100
+    }
+  ]
 }
-]
 ```
 
 ## POST /api/auth/login
 ### Request
 ```sh
-[
-  {
-  "userName" : "memelord69",
-  "password" : "sosecret",
+{
+  [
+    {
+    "userName" : "memelord69",
+    "password" : "sosecret",
+    }
+  ]
 }
-]
 ```
 
 ## GET /api/meetings
 ### Response:
 <!-- An Array of Meetings -->
 ```sh
-[
-  {
-    "id" : 1,
-    "meetingName" : "This meeting's name",
-    "attendees" : [
-      {
-        "userId" : 1234,
-      "userName" : "handle name"
-      "firstName" : "Name",
-      "lastName" : "Name",
-        "personCostPerHour" : 100.00,
-      }
-    ],
-    "time": timestamp
-    "meetingCostPerHour" : 250.00,
-    "totalMeetingTimeSeconds" : 360,
-    "totalCostOfMeeting" : 6000.00
-  }
-]
+{
+  [
+    {
+      "id" : 1,
+      "meetingName" : "This meeting's name",
+      "attendees" : [
+        {
+          "userId" : 1234,
+        "userName" : "handle name"
+        "firstName" : "Name",
+        "lastName" : "Name",
+          "personCostPerHour" : 100.00,
+        }
+      ],
+      "time": timestamp
+      "meetingCostPerHour" : 250.00,
+      "totalMeetingTimeSeconds" : 360,
+      "totalCostOfMeeting" : 6000.00
+    }
+  ]
+}
 ```
 
 ## POST /api/meetings
@@ -105,22 +111,24 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
 <!-- An Array of User objects -->
 <!-- Where meeting ID matches in join table -->
 ```sh
-[
-  {
-    "id" : 1234,
-    "userName" : "handle name"
-    "firstName" : "Name",
-    "lastName" : "Name",
-    "personCostPerHour" : 100.00,
-  },
-  {
-    "id" : 5678,
-    "userName" : "handle name"
-    "firstName" : "Name",
-    "lastName" : "Name",
-    "personCostPerHour" : 100.00,
-  },
-]
+{
+  [
+    {
+      "id" : 1234,
+      "userName" : "handle name"
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+    {
+      "id" : 5678,
+      "userName" : "handle name"
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+  ]
+}
 ```
 
 ## GET /api/users
@@ -128,20 +136,22 @@ API documentation: currently seeking feedback! Talk to Lianna or Emil if anythin
 <!-- Get the users of the app -->
 <!-- An Array of User Objects -->
 ```sh
-[
-  {
-    "id" : 1234,
-    "userName" : "handle name"
-    "firstName" : "Name",
-    "lastName" : "Name",
-    "personCostPerHour" : 100.00,
-  },
-  {
-    "id" : 5678,
-    "userName" : "handle name"
-    "firstName" : "Name",
-    "lastName" : "Name",
-    "personCostPerHour" : 100.00,
-  },
-]
+{
+  [
+    {
+      "id" : 1234,
+      "userName" : "handle name"
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+    {
+      "id" : 5678,
+      "userName" : "handle name"
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+  ]
+}
 ```
