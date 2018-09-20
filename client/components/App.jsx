@@ -5,8 +5,8 @@ import {connect} from 'react-redux'
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
-import Meeting from './Meeting'
-import History from './History'
+// import History from './History'
+import MainLayout from './MainLayout';
 
 const App = ({auth}) => (
   <Router>
@@ -27,8 +27,8 @@ const App = ({auth}) => (
         }
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/meeting" component={Meeting} />
-        <Route path="/history" component={History} />
+        <Route path="/home" component={MainLayout} />
+        {/* <Route path="/history" component={History} /> */}
       </div>
 
     </div>

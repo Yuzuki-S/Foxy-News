@@ -1,0 +1,22 @@
+/* .bigboi {
+  width: 100%;
+  border: 2px solid red;
+  column-count: 2;
+  display: flex;
+  flex-direction: row;
+
+} */
+
+
+
+.main_LeftSideBar{
+  border: 1px black solid;
+  width: 30%;
+}
+
+.right_mainLayout_container{
+  border: 1px black solid;
+  width: 60%;
+  float: right;
+
+}
