@@ -12,18 +12,16 @@ class AttendeesView extends React.Component {
         <ul>
           {console.log(this.props.meetings)}
           {this.props.meetings.map(attendee => {
-            {
-              console.log(attendee);
-            }
-            // attendee.map(person => {
-            //   return (
-            //     <li>
-            //       <b>Attendee:</b> {person.first_name} {person.last_name}
-            //       <br />
-            //       <b>Cost per hour:</b> ${person.hourly_wage}
-            //     </li>
-            //   );
-            // });
+
+
+            return (
+              <li>
+                <b>Attendee:</b> {attendee.first_name} {attendee.last_name}
+                <br />
+                <b>Cost per hour:</b> ${attendee.hourly_wage}
+              </li>
+            );
+
           })}
         </ul>
       </div>

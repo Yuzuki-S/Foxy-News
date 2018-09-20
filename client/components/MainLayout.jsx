@@ -4,7 +4,8 @@ import UserList from './UserList'
 import AttendeesList from './AttendeesList'
 // import MeetingUsersList from './MeetingUsersList'
 import TimerBox from './TimerBox'
-
+import CostPerHour from './CostPerHour'
+import MainStats from './MainStats';
 
 // Main Layout page
 
@@ -19,15 +20,7 @@ function MainLayout(props) {
     LEFT<UserList />
     </div>
     <div className="right_mainLayout_container">
-      
-      <AttendeesList />
-      {/* RIGHT    
-      <TimerBox /> */}
-      {/* <MeetingUsersList /> */}
-
-      {/* <div className="main_stats">
-    </div> */}
-      
+      <MainStats />
     </div>
 
 </div>
