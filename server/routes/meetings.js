@@ -37,27 +37,36 @@ const meetings = [
     }
   ]
 
+
 console.log(meetings[0]["id"])
 
+// sample function to be moved to db functions later
+function getMeetings() {
+  return meetings
+}
+
 // test send
+// router.get("/", (req, res) => {
+//   // res.send(meetings) // returns object in meetings
+
+//   res.send(getMeetings())
+
+// })
+
+// Get a Users Meeting Histroy
 router.get("/", (req, res) => {
-  res.send(meetings) // returns object in meetings
+  
 })
 
-// // Get a Users Meeting Histroy
-// router.get("/", (req, res) => {
-  //
-// })
+// Save a completed meeting
+router.post("/", (req, res) => {
+  // 
+})
 
-// // Save a completed meeting
-// router.post("/", (req, res) => {
-//   // 
-// })
-
-// // Get the attendees of a Meeting
-// router.get("/:id/users", (req, res) => {
-//   // 
-// })
+// Get the attendees of a Meeting
+router.get("/:id/users", (req, res) => {
+  // 
+})
 
 
 module.exports = router
