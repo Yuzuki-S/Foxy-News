@@ -6,6 +6,8 @@ var {
   saveMeeting
 } = require('../db/meetings');
 
+let { getUsers } = require('../db/users');
+
 router.get('/meetings/:id', getMeetings);
 
 function getMeetings(req, res, next) {
@@ -31,10 +33,19 @@ function saveMeetingAPI(req, res, next) {
 
 router.get('/meetings/:id/users', getMeetingAttendees);
 
-function getMeetingAttendees(req, res, next) {}
+function getMeetingAttendees(req, res, next) {
+  getMeetingInfo(req.params.id).then(info => {
+    res.json(info);
+  });
+}
 
-router.get('/users', getUsers);
+router.get('/users', getUsersAPI);
 
-function getUsers(req, res, next) {}
+function getUsersAPI(req, res, next) {
+  getUsers().then(users => {
+    console.log(users);
+    res.json(users);
+  });
+}
 
 module.exports = router;
