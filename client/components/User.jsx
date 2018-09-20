@@ -5,12 +5,12 @@ import {connect} from 'react-redux'
 // List of users for layout page
 function User (props) {
 
-
+console.log(props)
 
   return(
     <div>
-    <h1> User</h1>
-    <p>{}</p>
+      {props.person.user_name}
+      ${props.person.hourly_wage}
     </div>
   )
 
