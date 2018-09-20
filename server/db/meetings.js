@@ -29,7 +29,37 @@ function getMeetingInfo(meeting_id) {
     });
 }
 
+// create meeting entry
+// create attendee entry for every attendee
+// create user for every attendee, where attendee.userName is not in user db
+
+function saveMeeting(meeting) {
+  return db('meetings')
+    .insert({
+      meeting_name: meeting.meetingName,
+      time: meeting.time,
+      duration_seconds: meeting.totalMeetingTimeSeconds,
+      attendees: meeting.attendees.length,
+      cost: meeting.totalCostOfMeeting
+    })
+    .then(id => {
+      meeting.attendees.forEach(attendee => {
+        console.log(attendee.userId);
+        createAttendee(attendee.userId, id[0]);
+      });
+    });
+}
+
+function createAttendee(user_id, meeting_id) {
+  console.log('create attendee');
+  return db('attendees').insert({
+    user_id: user_id,
+    meeting_id: meeting_id
+  });
+}
+
 module.exports = {
   getUserMeetingHistory,
-  getMeetingInfo
+  getMeetingInfo,
+  saveMeeting
 };
