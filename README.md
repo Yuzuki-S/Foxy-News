@@ -199,3 +199,223 @@ npm run h:rollback
 
 ### Ta-Da!
 Your app should be deployed!
+
+
+## API docs: Request and response formats
+
+### POST /api/auth/register
+#### Request
+```sh
+{
+  [
+    {
+    "userName" : "memelord69",
+    "firstName" : "Thing",
+    "lastName" : "Trundell",
+    "password" : "sosecret",
+    "personCostPerHour" : 100
+    }
+  ]
+}
+```
+
+### POST /api/auth/login
+#### Request
+```sh
+{
+  [
+    {
+    "userName" : "memelord69",
+    "password" : "sosecret",
+    }
+  ]
+}
+```
+
+### GET /api/meetings
+#### Response:
+<!-- An Array of Meetings -->
+```sh
+{
+  [
+    {
+      "id" : 1,
+      "meetingName" : "This meeting's name",
+      "attendees" : [
+        {
+          "userId" : 1234,
+        "userName" : "handle name",
+        "firstName" : "Name",
+        "lastName" : "Name",
+          "personCostPerHour" : 100.00,
+        }
+      ],
+      "time": timestamp
+      "meetingCostPerHour" : 250.00,
+      "totalMeetingTimeSeconds" : 360,
+      "totalCostOfMeeting" : 6000.00
+    }
+  ]
+}
+```
+
+### POST /api/meetings
+#### Request:
+<!-- Usage: Save a completed meeting -->
+```sh
+{
+  "meetingName" : "This meeting's name",
+  "attendees" : [
+    {
+      "userId" : 1234,
+      "userName" : "handle name",
+      "firstName" : "Name",
+      "lastName" : "Name",
+    }
+  ],
+  "time" : "date and time",
+  "meetingCostPerHour" : 250.00,
+  "totalMeetingTimeSeconds" : 360,
+  "totalCostOfMeeting" : 6000.00
+}
+```
+
+
+#### Response:
+  <!-- The Meeting that has been saved in db read format -->
+  <!-- where ID matches: -->
+```sh
+{
+  "id" : 3000,
+  "meetingName" : "This meeting's name",
+  "attendees" : [
+    {
+      "id" : 1234,
+      "userName" : "handle name",
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+  ],
+  "time": timestamp
+  "meetingCostPerHour" : 250.00,
+  "totalMeetingTimeSeconds" : 360,
+  "totalCostOfMeeting" : 6000.00
+}
+```
+
+
+### GET /api/meetings/:id/users
+####Response:
+<!-- Get the attendees of a Meeting	 -->
+<!-- An Array of User objects -->
+<!-- Where meeting ID matches in join table -->
+```sh
+{
+  [
+    {
+      "id" : 1234,
+      "userName" : "handle name",
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+    {
+      "id" : 5678,
+      "userName" : "handle name",
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+  ]
+}
+```
+
+### GET /api/users
+#### Response:
+<!-- Get the users of the app -->
+<!-- An Array of User Objects -->
+```sh
+{
+  [
+    {
+      "id" : 1234,
+      "userName" : "handle name",
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+    {
+      "id" : 5678,
+      "userName" : "handle name",
+      "firstName" : "Name",
+      "lastName" : "Name",
+      "personCostPerHour" : 100.00,
+    },
+  ]
+}
+```
+
+
+## Team Tasks
+
+Product Owner: Maintain the readme as the agreed requirements of the project.  If these requirements change, make the change in the readme and then notify affected teams.
+Architecture Team: Maintain the documentation of the readme with respect to the APIs.  Routes, payloads and behaviours.  This is the agreement on how data will flow in the app.
+Backend Team: Build the APIs as per the readme and test them with Postman
+Frontend Team: Build the wireframes in conjunction with the product owner and then build the interface
+Timekeeper: Schedules and calls standups (can be done by the product owner)
+
+Notes: Create pull requests for all features and have them reviewed by Engie, Kelly or Ross.
+
+
+## To Do
+* Trello (Yuzuki)
+
+## Team Roles
+Team learning objectives:
+* Yuzuki ()
+* Leslie (Git trees)
+* Luke ()
+* Robbie ()
+* Bella ()
+* Lianna (deployment)
+* Ben ()
+* Dani (database)
+* Lexi (React / Redux)
+
+### Back End
+* Lianna
+* Luke 
+* Bella
+* Dani?
+* Lexi
+
+### Front End
+* Yuzuki
+* Leslie
+* Emil
+* Ben
+* Dani?
+
+### Architecture (api docs)
+* Front end: Emil
+* Back end: Lianna (later: Luke, Bella)
+
+### Product Owner & Timekeeper
+Initial:
+* Robbie
+
+
+# Meeting Notes
+
+## Backend Team
+Tasks: 
+* APIs
+* Database
+* Routes
+
+Right now:
+* Lianna work with Emil for API docs
+* Dani, Lexi: Begin APIs
+* Bella, Luke: begin database
+
