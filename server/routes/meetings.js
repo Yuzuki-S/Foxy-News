@@ -1,4 +1,5 @@
 const router = require("express").Router()
+// const {functionsfromDB} = require('../db/meetings')
 
 // Test content
 const meetings = [
@@ -37,36 +38,32 @@ const meetings = [
     }
   ]
 
-
-console.log(meetings[0]["id"])
-
-// sample function to be moved to db functions later
-function getMeetings() {
-  return meetings
-}
-
-// test send
+// // Test send to Postman - working
 // router.get("/", (req, res) => {
-//   // res.send(meetings) // returns object in meetings
-
-//   res.send(getMeetings())
-
+//   res.send(meetings)
 // })
+
 
 // Get a Users Meeting Histroy
 router.get("/", (req, res) => {
-  
+  db.getMeetings()
+  .then((meetings) => {
+      res.json(meetings)
+  })  
 })
 
 // Save a completed meeting
 router.post("/", (req, res) => {
-  // 
+  // placeholder
 })
 
 // Get the attendees of a Meeting
 router.get("/:id/users", (req, res) => {
-  // 
+  db.getMeetingsById(req.params.id)
+  .then((meetings) => { 
+//to be id of meeting used to return meeting users?
+      res.json(meetings)
+  })
 })
-
 
 module.exports = router
