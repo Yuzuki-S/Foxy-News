@@ -1,6 +1,32 @@
+
 API documentation: currently seeking feedback! Talk to Lianna or Emil if anything urgent is missing
 
 # Request and response formats
+
+## POST /api/auth/register
+### Request
+```sh
+[
+  {
+  "userName" : "memelord69",
+  "firstName" : "Thing",
+  "lastName" : "Trundell",
+  "password" : "sosecret",
+  "personCostPerHour" : 100
+}
+]
+```
+
+## POST /api/auth/login
+### Request
+```sh
+[
+  {
+  "userName" : "memelord69",
+  "password" : "sosecret",
+}
+]
+```
 
 ## GET /api/meetings
 ### Response:
