@@ -23,4 +23,5 @@ export function setAllUsers (users){
     type: "SET_ALL_USERS",
     allUsers: users
   }
+}  
 }
