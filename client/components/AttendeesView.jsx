@@ -15,8 +15,8 @@ class AttendeesView extends React.Component {
     return (
       <div id="attendeesviewcontainer">
         <ul>
-          {console.log(this.props)}
-          {/* {this.props.attendees.map(attendee => {
+          {console.log(this.props.meetings[0].map)}
+          {this.props.meetings[0].map(attendee => {
             return (
               <li>
                 <b>Attendee:</b> {attendee.first_name} {attendee.last_name}{" "}
@@ -24,7 +24,7 @@ class AttendeesView extends React.Component {
                 <b>Cost per hour:</b> ${attendee.hourly_wage}
               </li>
             );
-          })} */}
+          })}
         </ul>
       </div>
     );
@@ -33,7 +33,7 @@ class AttendeesView extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    meetings: state.meetings
+    meetings: state.singlemeeting
   };
 };
 
