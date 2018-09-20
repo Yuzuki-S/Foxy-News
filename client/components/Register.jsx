@@ -1,24 +1,24 @@
-import React from "react";
-import { connect } from "react-redux";
-import { registerUserRequest } from "../actions/register";
-import { loginError } from "../actions/login";
-import LoginNav from "./LoginNav";
+import React from 'react';
+import { connect } from 'react-redux';
+import { registerUserRequest } from '../actions/register';
+import { loginError } from '../actions/login';
+import LoginNav from './LoginNav';
 class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_name: "",
-      first_name: "",
-      last_name: "",
-      password: "",
-      confirm_password: "",
-      hourly_wage: ""
+      user_name: '',
+      first_name: '',
+      last_name: '',
+      password: '',
+      confirm_password: '',
+      hourly_wage: ''
     };
     this.updateDetails = this.updateDetails.bind(this);
     this.submit = this.submit.bind(this);
   }
   componentDidMount() {
-    this.props.dispatch(loginError(""));
+    this.props.dispatch(loginError(''));
   }
   updateDetails(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -34,7 +34,6 @@ class Register extends React.Component {
       last_name,
       hourly_wage
     } = this.state;
-    console.log(this.state);
 
     if (confirm_password != password)
       return this.props.dispatch(loginError("Passwords don't match"));

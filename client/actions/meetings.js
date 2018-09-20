@@ -1,11 +1,11 @@
-import request from "../utils/api";
+import request from '../utils/api';
 
 //get all meetings
 
 //this is our request action
 export function meetingReqAll() {
   return {
-    type: "MEETING_REQ",
+    type: 'MEETING_REQ',
     isFetching: true,
     isAuthenticated: true
   };
@@ -13,7 +13,7 @@ export function meetingReqAll() {
 //this handles the response from our api
 export function meetingResAll(response) {
   return {
-    type: "MEETING_RES",
+    type: 'MEETING_RES',
     isFetching: false,
     meeting: response
   };
@@ -22,9 +22,10 @@ export function meetingResAll(response) {
 export function allMeetings() {
   return dispatch => {
     dispatch(meetingReqAll());
-    return request("get", "allmeetings")
+    return request('get', 'allmeetings')
       .then(response => {
         if (!response.ok) {
+          //error case will go here
         } else {
           dispatch(meetingResAll(response.body));
         }
@@ -38,7 +39,7 @@ export function allMeetings() {
 //this is our request action
 export function meetingReq() {
   return {
-    type: "SINGLE_MEETING_REQ",
+    type: 'SINGLE_MEETING_REQ',
     isFetching: true,
     isAuthenticated: true
   };
@@ -46,25 +47,22 @@ export function meetingReq() {
 //this handles the response from our api
 export function meetingRes(response) {
   return {
-    type: "SINGLE_MEETING_RES",
+    type: 'SINGLE_MEETING_RES',
     isFetching: false,
     meeting: response
   };
 }
 
 export function getMeeting(id) {
-  console.log(id);
-
   return dispatch => {
     dispatch(meetingReq());
     let obj = {
       id: id
     };
-    return request("get", `meetings/${id}/users`, obj)
+    return request('get', `meetings/${id}/users`, obj)
       .then(response => {
         if (!response.ok) {
         } else {
-          console.log(response.body);
           dispatch(meetingRes(response.body.attendees));
         }
       })

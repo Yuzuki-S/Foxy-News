@@ -6,7 +6,6 @@ function createUser(user_name, first_name, last_name, hourly_wage, password) {
   return new Promise((resolve, reject) => {
     hash.generate(password, (err, hash) => {
       if (err) reject(err);
-      // console.log(hourlyrate);
 
       db('users')
         .insert({ user_name, first_name, last_name, hourly_wage, hash })

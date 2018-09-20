@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getMeeting } from "../actions/meetings";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getMeeting } from '../actions/meetings';
 
 class HistoricMeeting extends React.Component {
   constructor(props) {
@@ -11,8 +11,6 @@ class HistoricMeeting extends React.Component {
   componentDidMount() {}
 
   render() {
-    console.log(this.props);
-
     return (
       <div id="historycontainer">
         <div className="tile is-parent">
@@ -21,7 +19,6 @@ class HistoricMeeting extends React.Component {
             <p className="subtitle">
               <i className="fas fa-arrow-left" /> Select a meeting from the left
             </p>
-            {/* <p>{this.props.meetings}</p> */}
             <div className="content" />
           </article>
         </div>

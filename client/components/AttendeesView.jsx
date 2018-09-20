@@ -1,25 +1,19 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getMeeting } from "../actions/meetings";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getMeeting } from '../actions/meetings';
 class AttendeesView extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-    // this.props.getMeeting(this.props.id);
-  }
-
   render() {
-    // this.props.getMeeting(this.props.id);
     return (
       <div id="attendeesviewcontainer">
         <ul>
-          {console.log(this.props.meetings[0].map)}
           {this.props.meetings[0].map(attendee => {
             return (
               <li>
-                <b>Attendee:</b> {attendee.first_name} {attendee.last_name}{" "}
+                <b>Attendee:</b> {attendee.first_name} {attendee.last_name}{' '}
                 <br />
                 <b>Cost per hour:</b> ${attendee.hourly_wage}
               </li>

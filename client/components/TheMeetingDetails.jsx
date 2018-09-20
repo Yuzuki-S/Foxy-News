@@ -1,7 +1,7 @@
-import React from "react";
-import AttendeesView from "./AttendeesView";
-import { getMeeting } from "../actions/meetings";
-import { connect } from "react-redux";
+import React from 'react';
+import AttendeesView from './AttendeesView';
+import { getMeeting } from '../actions/meetings';
+import { connect } from 'react-redux';
 
 class TheMeetingDetails extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class TheMeetingDetails extends React.Component {
   }
 
   seeAttendees(id) {
-    console.log("23432423432  " + id);
     this.setState(prevState => ({
       attendeesView: !prevState.attendeesView
     }));
@@ -29,7 +28,6 @@ class TheMeetingDetails extends React.Component {
             <p className="subtitle">
               Meeting Details are below <i className="far fa-hand-point-down" />
             </p>
-            {console.log(this.props)}
             {this.props.meeting.map(meetingDetail => {
               return meetingDetail.map(actualdetail => {
                 if (actualdetail.id == this.props.meetingid)
@@ -77,8 +75,6 @@ const mapStateToProps = state => {
 function mapDispatchToProps(dispatch) {
   return {
     getMeeting: id => {
-      console.log(id + "fromr eact");
-
       dispatch(getMeeting(id));
     }
   };

@@ -1,11 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 class HistoricMeetings extends React.Component {
   render() {
     return (
       <div id="historycontainer">
-        {console.log(this.props.meetings)}
         {this.props.meetings.map(meeting => {
           return meeting.map(meetingdata => {
             return (
@@ -18,7 +17,6 @@ class HistoricMeetings extends React.Component {
                 id="history_meeting"
                 className="button is-success"
               >
-                {console.log(meetingdata)}
                 {meetingdata.meeting_name}
               </a>
             );
