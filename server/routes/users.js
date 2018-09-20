@@ -1,30 +1,7 @@
 const router = require("express").Router()
+// const {imported_functions} = require("../db/users")
 
-// // Test send json - working in Postman
-// router.get("/", (req, res) => {
-//   res.json({
-//   "array" : [
-//     {
-//       "id" : 1234,
-//       "userName" : "handle name",
-//       "firstName" : "Name",
-//       "lastName" : "Name",
-//       "personCostPerHour" : 100.00
-//     },
-//     {
-//       "id" : 5678,
-//       "userName" : "handle name",
-//       "firstName" : "Name",
-//       "lastName" : "Name",
-//       "personCostPerHour" : 100.00
-//     }
-//   ]
-// })
-// })
-
-
-
-// Get the users of the app
+// ----------- Get the users of the app
 router.get("/", (req, res) => {
   getUsers()
    .then(users => {
@@ -60,3 +37,28 @@ module.exports = router
 //     res.json(users);
 //   });
 // }
+
+
+
+// // Test send json - working in Postman
+// router.get("/", (req, res) => {
+//   res.json({
+//   "array" : [
+//     {
+//       "id" : 1234,
+//       "userName" : "handle name",
+//       "firstName" : "Name",
+//       "lastName" : "Name",
+//       "personCostPerHour" : 100.00
+//     },
+//     {
+//       "id" : 5678,
+//       "userName" : "handle name",
+//       "firstName" : "Name",
+//       "lastName" : "Name",
+//       "personCostPerHour" : 100.00
+//     }
+//   ]
+// })
+// })
+
