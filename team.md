@@ -70,3 +70,10 @@ Right now:
 * Lianna work with Emil for API docs
 * Dani, Lexi: Begin APIs
 * Bella, Luke: begin database
+
+## Priorities
+Evening:
+
+Fri AM:
+
+Fri PM:
