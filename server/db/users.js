@@ -34,12 +34,18 @@ function getUserByID(user_id) {
     .then(userInfo => {
       delete userInfo.hash;
       return userInfo;
-    });
+    })
+    .catch(err => {});
+}
+
+function getUsers() {
+  return db('users').select();
 }
 
 module.exports = {
   createUser,
   userExists,
   getUserByName,
-  getUserByID
+  getUserByID,
+  getUsers
 };
