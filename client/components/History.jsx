@@ -5,25 +5,30 @@ import HistoricMeeting from "./HistoricMeeting";
 import TheMeetingDetails from "./TheMeetingDetails";
 import { connect } from "react-redux";
 
-import { getMeeting } from "../actions/meetings";
+import { allMeetings, getMeeting } from "../actions/meetings";
 
 class History extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewDetails: true
+      viewDetails: true,
+      meetingID: ""
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    this.props.getMeeting(1);
+    this.props.allMeetings();
   }
 
-  handleClick() {
+  handleClick(e) {
+    this.setState({
+      meetingID: e.target.name
+    });
     this.setState(prevState => ({
       viewDetails: !prevState.viewDetails
     }));
+    //this.props.getMeeting(this.state.meetingID);
   }
 
   render() {
@@ -53,7 +58,10 @@ class History extends React.Component {
           <div id="h_right">
             {this.state.viewDetails && <HistoricMeeting />}
             {!this.state.viewDetails && (
-              <TheMeetingDetails meeting={this.props.meetings} />
+              <TheMeetingDetails
+                meetingid={this.state.meetingID}
+                meeting={this.props.meetings}
+              />
             )}
           </div>
         </div>
@@ -68,11 +76,17 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+function mapDispatchToProps(dispatch) {
   return {
-    getMeeting: num => dispatch(getMeeting(num))
+    allMeetings: num => {
+      dispatch(allMeetings(num));
+    },
+
+    getMeeting: id => {
+      dispatch(getMeeting(id));
+    }
   };
-};
+}
 
 export default connect(
   mapStateToProps,

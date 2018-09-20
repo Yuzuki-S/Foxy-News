@@ -4,6 +4,12 @@ const meetings = (state = [], action) => {
       return [...state];
     case "MEETING_RES":
       return [...state, action.meeting];
+
+    case "SINGLE_MEETING_RES":
+      return [...state, action.meeting];
+
+    case "SINGLE_MEETING_REQ":
+      return [...state, action.meeting];
     default:
       return state;
   }

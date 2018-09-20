@@ -1,5 +1,7 @@
 import React from "react";
 import AttendeesView from "./AttendeesView";
+import { getMeeting } from "../actions/meetings";
+import { connect } from "react-redux";
 
 class TheMeetingDetails extends React.Component {
   constructor(props) {
@@ -10,12 +12,12 @@ class TheMeetingDetails extends React.Component {
     this.seeAttendees = this.seeAttendees.bind(this);
   }
 
-  seeAttendees() {
-    console.log("the func");
-
+  seeAttendees(id) {
+    console.log("23432423432  " + id);
     this.setState(prevState => ({
       attendeesView: !prevState.attendeesView
     }));
+    this.props.getMeeting(id);
   }
 
   render() {
@@ -27,43 +29,36 @@ class TheMeetingDetails extends React.Component {
             <p className="subtitle">
               Meeting Details are below <i className="far fa-hand-point-down" />
             </p>
+            {console.log(this.props)}
             {this.props.meeting.map(meetingDetail => {
-              return (
-                // <div className="tile is-ancestor">
-                //   <div className="tile is-4 is-vertical is-parent">
-                //     <div className="tile is-child box">
-                //       <p className="title">Meeting Name</p>
-                //       <p>{meetingDetail.meeting_name}</p>
-                //     </div>
-                //     <div className="tile is-child box">
-                //       <p className="title">Two</p>
-                //       <p>
-                //         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                //         Proin ornare magna eros, eu pellentesque tortor
-                //         vestibulum ut. Maecenas non massa sem. Etiam finibus
-                //         odio quis feugiat facilisis.
-                //       </p>
-                //     </div>
-                //   </div>
-                <div className="tile is-parent">
-                  <div className="tile is-child box">
-                    <p className="title">
-                      Meeting Name: {meetingDetail.meeting_name}
-                    </p>
-                    <ul>
-                      <li>
-                        Duration in Seconds: {meetingDetail.duration_seconds}
-                      </li>
-                      <li>Total Cost: ${meetingDetail.cost}</li>
-                    </ul>
-                    {this.state.attendeesView && (
-                      <AttendeesView attendees={meetingDetail.attendees} />
-                    )}
-                  </div>
-                  <button onClick={this.seeAttendees}>Toggle Attendees</button>
-                </div>
-                // </div>
-              );
+              return meetingDetail.map(actualdetail => {
+                if (actualdetail.id == this.props.meetingid)
+                  return (
+                    <div className="tile is-parent">
+                      <div className="tile is-child box">
+                        <p className="title">
+                          Meeting Name: {actualdetail.meeting_name}
+                        </p>
+                        <ul>
+                          <li>
+                            Duration in Seconds: {actualdetail.duration_seconds}
+                          </li>
+                          <li>Total Cost: ${actualdetail.cost}</li>
+                        </ul>
+                        {this.state.attendeesView && (
+                          <AttendeesView id={this.props.meetingid} />
+                        )}
+                      </div>
+                      <button
+                        onClick={() => {
+                          this.seeAttendees(this.props.meetingid);
+                        }}
+                      >
+                        Toggle Attendees
+                      </button>
+                    </div>
+                  );
+              });
             })}
             <div className="content" />
           </article>
@@ -73,4 +68,23 @@ class TheMeetingDetails extends React.Component {
   }
 }
 
-export default TheMeetingDetails;
+const mapStateToProps = state => {
+  return {
+    meetings: state.meetings
+  };
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getMeeting: id => {
+      console.log(id + "fromr eact");
+
+      dispatch(getMeeting(id));
+    }
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TheMeetingDetails);

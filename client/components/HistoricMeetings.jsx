@@ -2,37 +2,28 @@ import React from "react";
 import { connect } from "react-redux";
 
 class HistoricMeetings extends React.Component {
-  // handleClick = e => {
-  //   console.log("clicked meeting id " + e);
-  // };
-
   render() {
     return (
       <div id="historycontainer">
+        {console.log(this.props.meetings)}
         {this.props.meetings.map(meeting => {
-          return (
-            <a
-              value="1"
-              onClick={e => {
-                this.props.handleClick(1);
-              }}
-              id="history_meeting"
-              className="button is-success"
-            >
-              Meeting {meeting.id}
-            </a>
-          );
+          return meeting.map(meetingdata => {
+            return (
+              <a
+                value={meetingdata.id}
+                name={meetingdata.id}
+                onClick={e => {
+                  this.props.handleClick(e);
+                }}
+                id="history_meeting"
+                className="button is-success"
+              >
+                {console.log(meetingdata)}
+                {meetingdata.meeting_name}
+              </a>
+            );
+          });
         })}
-        {/* <a
-          value="1"
-          onClick={e => {
-            this.handleClick(1);
-          }}
-          id="history_meeting"
-          className="button is-success"
-        >
-          Meeting 1
-        </a> */}
       </div>
     );
   }

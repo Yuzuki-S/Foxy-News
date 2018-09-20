@@ -1,13 +1,17 @@
-const db = require('./connection');
-let usersDB = require('./users');
+const db = require("./connection");
+let usersDB = require("./users");
 
 function getUserMeetingHistory(user_id) {
-  return db('attendees').where('user_id', user_id);
+  return db("attendees").where("user_id", user_id);
+}
+
+function getAllMeetings() {
+  return db("meetings");
 }
 
 function getAttendeesByMeeting(meeting_id) {
-  return db('attendees')
-    .where('meeting_id', meeting_id)
+  return db("attendees")
+    .where("meeting_id", meeting_id)
     .then(entries => {
       let arr = [];
       entries.forEach(entry => {
@@ -18,8 +22,8 @@ function getAttendeesByMeeting(meeting_id) {
 }
 
 function getMeetingInfo(meeting_id) {
-  return db('meetings')
-    .where('id', meeting_id)
+  return db("meetings")
+    .where("id", meeting_id)
     .first()
     .then(meetingData => {
       return getAttendeesByMeeting(meeting_id).then(attendees => {
@@ -34,7 +38,7 @@ function getMeetingInfo(meeting_id) {
 // create user for every attendee, where attendee.userName is not in user db
 
 function saveMeeting(meeting) {
-  return db('meetings')
+  return db("meetings")
     .insert({
       meeting_name: meeting.meetingName,
       time: meeting.time,
@@ -49,15 +53,13 @@ function saveMeeting(meeting) {
         arr.push(createAttendee(attendee.userId, id[0]));
       });
       return Promise.all(arr).then(() => {
-        //console.log(meeting);
         return meeting;
       });
     });
 }
 
 function createAttendee(user_id, meeting_id) {
-  //console.log('create attendee');
-  return db('attendees').insert({
+  return db("attendees").insert({
     user_id: user_id,
     meeting_id: meeting_id
   });
@@ -66,5 +68,6 @@ function createAttendee(user_id, meeting_id) {
 module.exports = {
   getUserMeetingHistory,
   getMeetingInfo,
-  saveMeeting
+  saveMeeting,
+  getAllMeetings
 };
