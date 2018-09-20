@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import UserList from './UserList'
-// import MeetingList from './MeetingList'
+import AttendeesList from './AttendeesList'
 // import MeetingUsersList from './MeetingUsersList'
 import TimerBox from './TimerBox'
 
@@ -20,9 +20,9 @@ function MainLayout(props) {
     </div>
     <div className="right_mainLayout_container">
       
-      {/* <MeetingList /> */}
-      RIGHT    
-      <TimerBox />
+      <AttendeesList />
+      {/* RIGHT    
+      <TimerBox /> */}
       {/* <MeetingUsersList /> */}
 
       {/* <div className="main_stats">

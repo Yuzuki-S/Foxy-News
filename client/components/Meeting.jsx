@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import UserList from './UserList'
-import MeetingUserList from './MeetingUsersList'
+import AttendeesList from './AttendeesList'
 import TimerBox from './TimerBox'
 
 //Meeting data
