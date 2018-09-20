@@ -1,0 +1,135 @@
+
+.main_LeftSideBar{
+  border: 1px black solid;
+  width: 30%;
+}
+
+.right_mainLayout_container{
+  border: 1px black solid;
+  width: 60%;
+  float: right;
+
+}
+
+/* App Styles */
+/* *********** */
+#App_firstcontainer {
+  max-width: 40%;
+  padding-top: 1.3%;
+}
+
+#App_Hero {
+  background-color: #2ec4b6;
+}
+
+#App_title {
+  padding-bottom: 2%;
+  text-shadow: 2px 2px green;
+}
+
+@media screen and (max-width: 900px) {
+  #App_firstcontainer {
+    max-width: 90%;
+  }
+}
+
+.heropanel--video {
+  font-family: sans-serif;
+  min-height: 500px;
+}
+
+@keyframes gm-slidein {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.heropanel__content {
+  -moz-animation: gm-slidein 3s 1;
+  -ms-animation: gm-slidein 3s 1;
+  -o-animation: gm-slidein 3s 1;
+  -webkit-animation: gm-slidein 3s 1;
+  animation: gm-slidein 3s 1;
+  border-bottom: 1px solid #fff;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: 4em 0 2em;
+  text-align: center;
+}
+
+.heropanel__content h1 {
+  margin: 0 0 0.5em;
+  text-transform: uppercase;
+}
+
+.heropanel__content h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.heropanel__content p {
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#bgvid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  min-width: 130%;
+  min-height: 100%;
+  opacity: 0.8;
+  z-index: -1;
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.section {
+  padding: 0;
+}
+
+/* Nav styles */
+/* *********** */
+
+.navbar-menu #Nav_help {
+  float: left;
+}
+
+/* Help styles */
+/* *********** */
+#Help_content {
+  background-color: white;
+  border: 1px solid rgb(181, 250, 181);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+#Help_head {
+  margin-top: 2%;
+  font-weight: 600;
+}
+
+#Help_body {
+  text-align: left;
+  padding: 10px;
+}
+
+/* Login styles */
+/* *********** */
+
+#Login_btn {
+  background-color: #2ec4b6;
+}
