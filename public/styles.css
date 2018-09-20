@@ -1,3 +1,16 @@
+
+.main_LeftSideBar{
+  border: 1px black solid;
+  width: 30%;
+}
+
+.right_mainLayout_container{
+  border: 1px black solid;
+  width: 60%;
+  float: right;
+
+}
+
 /* App Styles */
 /* *********** */
 #App_firstcontainer {

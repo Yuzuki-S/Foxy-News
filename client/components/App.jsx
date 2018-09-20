@@ -2,12 +2,16 @@ import React from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+
+// import History from './History'
+import MainLayout from './MainLayout';
+
 import Login from "./Login";
 import Register from "./Register";
 import Nav from "./Nav";
 import Meeting from "./Meeting";
-import History from "./History";
 import Help from "./Help";
+
 
 const App = ({ auth }) => (
   <Router>
@@ -35,8 +39,11 @@ const App = ({ auth }) => (
         {!auth.isAuthenticated && <Route exact path="/" component={Login} />}
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/meeting" component={Meeting} />
-        <Route path="/history" component={History} />
+
+        <Route path="/home" component={MainLayout} />
+        {/* <Route path="/history" component={History} /> */}
+
+
         <Route path="/help" component={Help} />
       </div>
     </div>
