@@ -19,6 +19,7 @@ export default function timer (state = initState, action) {
 
 
     switch (action.type) {
+        
         case 'START_TIMER':
             return {
                 ...state,

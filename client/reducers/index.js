@@ -6,6 +6,6 @@ import timer from './timer'
 
 export default combineReducers({
   auth,
-  userRed,
-  timer
+  timer,
+  userRed
 })
