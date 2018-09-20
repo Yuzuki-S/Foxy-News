@@ -5,13 +5,20 @@ class Help extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
-        <div id="Help_content" className="content">
-          <h1 id="Help_head" className="title is-2">
-            About
-          </h1>
-          <hr />
-
+        <div id="history_nav">
+          <div id="Help_content" class="columns">
+            <Navbar />
+          </div>
+        </div>
+        <section id="hero_history" className="hero is-primary">
+          <div id="hero_body" className="hero-body">
+            <div className="container">
+              <h1 className="title">About</h1>
+              <h2 className="subtitle">See about</h2>
+            </div>
+          </div>
+        </section>
+        <div id="help_box">
           <p id="Help_body">
             Meetings are expensive, but sometimes we forget how expensive they
             are and feel the need to talk for too long about topics that are

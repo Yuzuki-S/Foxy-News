@@ -128,7 +128,13 @@
 
 #Help_body {
   text-align: left;
-  padding: 10px;
+  padding: 3% 20%;
+  font-size: 25px;
+}
+
+#help_box {
+  max-width: 70%;
+  margin: auto;
 }
 
 /* Login styles */
@@ -200,4 +206,8 @@
 
 .tile.is-parent {
   padding: 0 !important;
+}
+
+.hero.is-primary {
+  background-color: rgb(231, 147, 147);
 }
