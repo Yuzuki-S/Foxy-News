@@ -4,23 +4,24 @@ Backend Team: Build the APIs as per the readme and test them with Postman
 Frontend Team: Build the wireframes in conjunction with the product owner and then build the interface
 Timekeeper: Schedules and calls standups (can be done by the product owner)
 
-Notes: Create pull requests for all features and have them reviewed by Engie, Kelly or Ross.
+Notes:
+- Push to your branch, pull request to Dev.
+- Pull requests for all features and have them reviewed by Engie, Kelly or Ross.
 
-
-## To Do
-* Trello (Yuzuki)
 
 ## Team Roles
-Team learning objectives:
+
+### Team learning objectives:
 * Yuzuki ()
 * Leslie (Git trees)
 * Luke ()
-* Robbie ()
+* Robbie (Product Owner)
 * Bella ()
 * Lianna (deployment)
 * Ben ()
 * Dani (database)
 * Lexi (React / Redux)
+
 
 ### Back End
 * Lianna
@@ -47,6 +48,18 @@ Initial:
 
 # Meeting Notes
 
+## Frontend team
+Tasks:
+* build components
+* landing page
+* log in
+* Redux (after components)
+
+other:
+* use semantic styling
+* using Bulma
+
+
 ## Backend Team
 Tasks: 
 * APIs
@@ -57,5 +70,3 @@ Right now:
 * Lianna work with Emil for API docs
 * Dani, Lexi: Begin APIs
 * Bella, Luke: begin database
-
-

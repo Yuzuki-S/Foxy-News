@@ -1,5 +1,7 @@
 # $how Me The Money
 
+## - Refer to team.md for meeting notes and info -
+
 # Week 7 Group Project
 
 Meetings are expensive, but sometimes we forget how expensive they are and feel the need to talk for too long about topics that are unimportant for the meeting purpose.
