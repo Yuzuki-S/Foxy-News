@@ -6,13 +6,13 @@ const initState = {
     totalTime: 0
 }
 
-    // function isFirstTS(first){
-    //     if (first){
-    //         return new Date()
-    //     } else {
-    //         return state.timestamp
-    //     }
-    // }
+    function isFirstTS(first, state){
+        if (first){
+            return new Date()
+        } else {
+            return state.timestamp
+        }
+    }
 
 export default function timer (state = initState, action) {
   
@@ -24,8 +24,8 @@ export default function timer (state = initState, action) {
             return {
                 ...state,
                 play: true,
-                timestamp: isFirstTS(state.isFirstPlay),
-                session_start: new Date(),
+                timestamp: isFirstTS(state.isFirstPlay, state),
+                sessionStart: new Date(),
                 extra: action.thing
             }
         case 'PAUSE_TIMER':
@@ -33,14 +33,14 @@ export default function timer (state = initState, action) {
                 ...state,
                 play: false,
                 isFirstPlay: false,
-                totalTime: state.totalTime+=(state.session_start-new Date())
+                totalTime: state.totalTime+=(new Date()-state.sessionStart)
             }
         case 'STOP_TIMER':
             return {
                 ...state,
                 play: false,
                 isFirstPlay: false,
-                totalTime: state.totalTime+=(state.session_start-new Date())
+                totalTime: state.totalTime+=(new Date()-state.sessionStart)
             }
       default:
         return state

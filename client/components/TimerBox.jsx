@@ -15,9 +15,9 @@ function TimerBox(props) {
   //On pause set FIRSTPLAY=FALSE and PLAY=FALSE, 
   //On stop set FIRSTPLAY=FALSE and PLAY=FALSE, TOTALTIME=timer
 
-    {while (totalTime < 10){
+    // {while (totalTime < 10){
       
-    }}
+    // }}
   
   return (
   
