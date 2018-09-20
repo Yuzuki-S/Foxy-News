@@ -1,12 +1,12 @@
-var path = require('path')
-var express = require('express')
-var bodyParser = require('body-parser')
-var cors = require('cors')
-var passport = require('passport')
+var path = require('path');
+var express = require('express');
+var bodyParser = require('body-parser');
+var cors = require('cors');
+var passport = require('passport');
 
-var server = express()
+var server = express();
 
-server.use(cors('*'))
+server.use(cors('*'));
 
 server.use(express.json())
 server.use(passport.initialize())
@@ -17,5 +17,9 @@ server.use('/api/auth', require('./routes/auth'))
 server.use('/api/meetings', require('./routes/meetings'))
 server.use('/api/users', require('./routes/users'))
 
+server.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
 
-module.exports = server
+
+module.exports = server;
