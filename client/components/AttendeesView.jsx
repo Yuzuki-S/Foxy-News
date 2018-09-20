@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { getMeeting } from '../actions/meetings';
+import React from "react";
+import { connect } from "react-redux";
+import { getMeeting } from "../actions/meetings";
 class AttendeesView extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +10,7 @@ class AttendeesView extends React.Component {
     return (
       <div id="attendeesviewcontainer">
         <ul>
-          {/* {console.log(this.props)}
+          {console.log(this.props.meetings)}
           {this.props.meetings.map(attendee => {
             {
               console.log(attendee);
@@ -24,7 +24,7 @@ class AttendeesView extends React.Component {
             //     </li>
             //   );
             // });
-          })} */}
+          })}
         </ul>
       </div>
     );
