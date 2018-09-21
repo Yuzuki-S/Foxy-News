@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 
 function costPerHour(props) {
 
-  console.log(props)
-
   const totalCostPerHour = attendess.map(attendee => {
     return attendee.costPerHour;
   }).reduce((i,j)=>{return i+j})
