@@ -77,3 +77,44 @@ Evening:
 Fri AM:
 
 Fri PM:
+
+
+Notes:
+client/components/HistoricMeeting.jsx
+    this.state = {};
+  }
+   componentDidMount() {}
+  @kelly-keating
+kelly-keating 2 hours ago
+You don't need to change this necessarily, but a note that you don't seem to need didMount or this.state here
+
+
+
+server/db/meetings.js
+function getAttendeesByMeeting(meeting_id) {
+  return db("attendees")
+    .where("meeting_id", meeting_id)
+    .then(entries => {
+
+server/db/meetings.js
+  return db("meetings")
+    .where("id", meeting_id)
+    .first()
+    .then(meetingData => {
+
+server/db/meetings.js
+    attendees: meeting.attendees.length,
+    cost: meeting.totalCostOfMeeting
+  })
+  .then(id => {
+
+server/db/users.js
+    .first()
+    .then(userInfo => {
+
+  @kelly-keating
+kelly-keating 2 hours ago
+This .then statement should be where getAttendeesByMeeting is called rather than in the db function
+
+
+- remember to remove all console logs before merging with master (unless they serve a functional purpose)

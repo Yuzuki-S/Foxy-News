@@ -91,6 +91,9 @@ As a user:
 | Get | /api/meetings/:id/users | Yes | Get the attendees of a Meeting | An Array of User objects |
 | Get | /api/users | Yes | Get the users of the app | An Array of User Objects |
 
+* updates:
+- new API/route created by Leslie. getAllMeetings function in DB Get request hits the server and returns an array of objects holding every meeting in history. (I may not have understood that correctly, check with Les if you need clarification)
+
 ## DB (Server Side)
   There should be three tables for MVP
 
