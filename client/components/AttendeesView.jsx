@@ -10,7 +10,6 @@ class AttendeesView extends React.Component {
     return (
       <div id="attendeesviewcontainer">
         <ul>
-          {console.log(this.props.meetings)}
           {this.props.meetings.map(attendee => {
 
 
