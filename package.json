@@ -33,6 +33,7 @@
     "ava": "^0.19.1",
     "enzyme": "^2.8.2",
     "nodemon": "^1.11.0",
+    "sqlite3": "^4.0.2",
     "supertest": "^3.0.0"
   },
   "dependencies": {
@@ -62,7 +63,6 @@
     "react-test-renderer": "^15.5.4",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "sqlite3": "^4.0.2",
     "superagent": "^2.2.0",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"

@@ -1,5 +1,7 @@
 # $how Me The Money
 
+## - Refer to team.md for meeting notes and info -
+
 # Week 7 Group Project
 
 Meetings are expensive, but sometimes we forget how expensive they are and feel the need to talk for too long about topics that are unimportant for the meeting purpose.
@@ -88,6 +90,9 @@ As a user:
 | Post | /api/meetings | Yes | Save a completed meeting | The Meeting that has been saved in db read format |
 | Get | /api/meetings/:id/users | Yes | Get the attendees of a Meeting | An Array of User objects |
 | Get | /api/users | Yes | Get the users of the app | An Array of User Objects |
+
+* updates:
+- new API/route created by Leslie. getAllMeetings function in DB Get request hits the server and returns an array of objects holding every meeting in history. (I may not have understood that correctly, check with Les if you need clarification)
 
 ## DB (Server Side)
   There should be three tables for MVP
