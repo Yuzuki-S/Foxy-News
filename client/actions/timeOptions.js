@@ -2,7 +2,6 @@
 
 export function startTimer () {
     
-    console.log('the bst')
     return {
       type: 'START_TIMER'
     }
