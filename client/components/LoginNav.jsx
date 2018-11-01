@@ -18,7 +18,7 @@ class LoginNav extends React.Component {
           <div className="hero-body has-text-centered">
             <Link to="/" className="">
               <h1 id="App_title" className="title is-1">
-                $how Me The Money
+                Foxy News
               </h1>
             </Link>
             <Nav />
