@@ -29,7 +29,13 @@
 
 #App_title {
   padding-bottom: 2%;
-  text-shadow: 2px 2px green;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 80px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 72px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 900px) {
