@@ -1,12 +1,5 @@
-.main_LeftSideBar {
-  border: 1px black solid;
-  width: 30%;
-}
-
-.right_mainLayout_container {
-  border: 1px black solid;
-  width: 60%;
-  float: right;
+body {
+  background-color: #eee;
 }
 
 /* App Styles */
@@ -76,6 +69,12 @@
   padding: 0;
 }
 
+/*Nav styles */
+/*******************/
+
+.container {
+  background-color: #eee;
+}
 /* Login styles */
 /* *********** */
 
