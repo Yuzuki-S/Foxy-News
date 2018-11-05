@@ -1,24 +1,22 @@
-import React from "react";
-import Navbar from "./Navbar";
-import HistoricMeetings from "./HistoricMeetings";
-import HistoricMeeting from "./HistoricMeeting";
-import TheMeetingDetails from "./TheMeetingDetails";
-import { connect } from "react-redux";
+import React from 'react';
+import HistoricMeetings from './HistoricMeetings';
+import HistoricMeeting from './HistoricMeeting';
+import TheMeetingDetails from './TheMeetingDetails';
+import { connect } from 'react-redux';
 
-import { allMeetings, getMeeting } from "../actions/meetings";
+import { allMeetings, getMeeting } from '../actions/meetings';
 
 class History extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       viewDetails: true,
-      meetingID: ""
+      meetingID: ''
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-
     this.props.allMeetings();
   }
 
@@ -35,11 +33,6 @@ class History extends React.Component {
   render() {
     return (
       <div>
-        <div id="history_nav">
-          <div id="Help_content" class="columns">
-            <Navbar />
-          </div>
-        </div>
         <section id="hero_history" className="hero is-primary">
           <div id="hero_body" className="hero-body">
             <div className="container">

@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { logoutUser } from "../actions/logout";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { logoutUser } from '../actions/logout';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -22,15 +22,6 @@ class Nav extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link
-              onClick={this.toggleHelp}
-              className="navbar-item is-large"
-              id="Nav_help"
-              to="/help"
-              className="navbar-item"
-            >
-              Help
-            </Link>
-            <Link
               onClick={this.toggleHistory}
               className="navbar-item is-large"
               id="nav_history"
@@ -42,7 +33,7 @@ class Nav extends React.Component {
             <span
               onClick={this.toggleBurger}
               className={`navbar-burger burger ${
-                showBurger ? "is-active" : ""
+                showBurger ? 'is-active' : ''
               }`}
               data-target="navbarMenuHeroA"
             >
@@ -53,7 +44,7 @@ class Nav extends React.Component {
           </div>
           <div
             id="navbarMenuHeroA"
-            className={`navbar-menu ${showBurger ? "is-active" : ""}`}
+            className={`navbar-menu ${showBurger ? 'is-active' : ''}`}
           >
             <div className="navbar-end">
               {auth.isAuthenticated ? (

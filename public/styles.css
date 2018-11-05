@@ -11,31 +11,11 @@
 
 /* App Styles */
 /* *********** */
-#App_firstcontainer {
-  max-width: 40%;
-  padding-top: 0%;
-  margin: 2% auto 0%;
-}
 
 #app_secondcontainer {
   max-width: 40%;
   padding-top: 0%;
   margin: 0% auto;
-}
-
-#App_Hero {
-  background-color: #2ec4b6;
-}
-
-#App_title {
-  padding-bottom: 2%;
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 80px;
-  text-transform: uppercase;
-  display: inline-block;
-  line-height: 72px;
-  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 900px) {
@@ -92,55 +72,8 @@
   text-transform: uppercase;
 }
 
-#bgvid {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  min-width: 130%;
-  min-height: 100%;
-  opacity: 0.8;
-  z-index: -1;
-  -moz-transform: scale(1);
-  -webkit-transform: scale(1);
-  -o-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
 .section {
   padding: 0;
-}
-
-/* Nav styles */
-/* *********** */
-
-.navbar-menu #Nav_help {
-  float: left;
-}
-
-/* Help styles */
-/* *********** */
-#Help_content {
-  background-color: white;
-  border: 1px solid rgb(181, 250, 181);
-  border-radius: 4px;
-}
-
-#Help_head {
-  margin-top: 2%;
-  font-weight: 600;
-}
-
-#Help_body {
-  text-align: left;
-  padding: 3% 20%;
-  font-size: 25px;
-}
-
-#help_box {
-  max-width: 70%;
-  margin: auto;
 }
 
 /* Login styles */
@@ -154,13 +87,34 @@
   background-color: #2ec4b6;
 }
 
-.navbar_nav {
-  background-color: #2ec4b6;
+/*LoginNav*/
+
+#LoginNav_firstcontainer {
+  max-width: 100%;
+  padding-top: 0%;
+  margin: 2% auto 0%;
 }
 
-.navbar-item {
-  color: white;
+#LoginNav_title {
+  color: #2f2f2f;
+  padding-bottom: 2%;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 80px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 72px;
+  margin-bottom: 20px;
 }
+
+#LoginNav_subhead {
+  color: #2f2f2f;
+  text-transform: uppercase;
+  border-bottom: 2px solid #2f2f2f;
+  border-top: 2px solid #2f2f2f;
+  padding: 12px 0 12px 0;
+}
+
 /* History styles */
 /* *********** */
 
@@ -212,10 +166,6 @@
 
 .tile.is-parent {
   padding: 0 !important;
-}
-
-.hero.is-primary {
-  background-color: rgb(231, 147, 147);
 }
 
 #attendeesviewcontainer {

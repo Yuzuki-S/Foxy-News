@@ -6,7 +6,6 @@ import MainLayout from './MainLayout';
 import Login from './Login';
 import Register from './Register';
 import LoginNav from './LoginNav';
-import Help from './Help';
 
 const App = ({ auth }) => (
   <Router>
@@ -19,7 +18,6 @@ const App = ({ auth }) => (
         )}
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={(LoginNav, Register)} />
-        <Route exact path="/help" component={Help} />
         <Route exact path="/home" component={MainLayout} />
         <Route path="/history" component={History} />
       </div>

@@ -1,1 +1,0 @@
-//Meeting list similar to user list
