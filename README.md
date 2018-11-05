@@ -1,5 +1,4 @@
-# $how Me The Money
-
+# Foxy News
 ## - Refer to team.md for meeting notes and info -
 
 # Week 7 Group Project
