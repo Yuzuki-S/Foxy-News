@@ -13,11 +13,10 @@ const App = ({ auth }) => (
     <div>
       <div className="">
         {!auth.isAuthenticated ? (
-          <Route exact path="/" component={Header} />
+          <Route exact path="/" component={Home} />
         ) : (
           <Route exact path="/" component={Main} />
         )}
-        <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={(Header, Register)} />
         <Route path="/history" component={History} />

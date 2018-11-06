@@ -28,7 +28,6 @@ class Login extends React.Component {
     const { auth } = this.props;
     return (
       <div>
-        <Header />
         <div id="app_secondcontainer">
           <form className="form box" onSubmit={this.submit}>
             <h1 className="title is-2 has-text-centered">Login</h1>

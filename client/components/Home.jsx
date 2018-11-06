@@ -1,8 +1,16 @@
 import React from 'react';
+import Header from './Header';
+import ArticlewithFox from './ArticlewithFox';
 
 class Home extends React.Component {
   render() {
-    return <div>Breaking News!</div>;
+    return (
+      <div>
+        <Header />
+        Breaking News!
+        <ArticlewithFox />
+      </div>
+    );
   }
 }
 
