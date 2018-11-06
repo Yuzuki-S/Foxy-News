@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { registerUserRequest } from '../actions/register';
 import { loginError } from '../actions/login';
-import LoginNav from './LoginNav';
+import Header from './Header';
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +43,7 @@ class Register extends React.Component {
     const { auth } = this.props;
     return (
       <div>
-        <LoginNav />
+        <Header />
         <div id="app_secondcontainer">
           <form className="Register form box" onSubmit={this.submit}>
             <h1 className="title is-2 has-text-centered">Register</h1>

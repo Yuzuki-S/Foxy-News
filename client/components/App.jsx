@@ -5,7 +5,7 @@ import History from './History';
 import Main from './Main';
 import Login from './Login';
 import Register from './Register';
-import LoginNav from './LoginNav';
+import Header from './Header';
 import Home from './Home';
 
 const App = ({ auth }) => (
@@ -13,13 +13,13 @@ const App = ({ auth }) => (
     <div>
       <div className="">
         {!auth.isAuthenticated ? (
-          <Route exact path="/" component={LoginNav} />
+          <Route exact path="/" component={Header} />
         ) : (
           <Route exact path="/" component={Main} />
         )}
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={(LoginNav, Register)} />
+        <Route exact path="/register" component={(Header, Register)} />
         <Route path="/history" component={History} />
       </div>
     </div>

@@ -1,20 +1,20 @@
-import React from "react";
-import { connect } from "react-redux";
-import { loginUser, loginError } from "../actions/login";
-import LoginNav from "./LoginNav";
+import React from 'react';
+import { connect } from 'react-redux';
+import { loginUser, loginError } from '../actions/login';
+import Header from './Header';
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_name: "",
-      password: ""
+      user_name: '',
+      password: ''
     };
     this.updateDetails = this.updateDetails.bind(this);
     this.submit = this.submit.bind(this);
   }
   componentDidMount() {
-    this.props.dispatch(loginError(""));
+    this.props.dispatch(loginError(''));
   }
   updateDetails(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -28,7 +28,7 @@ class Login extends React.Component {
     const { auth } = this.props;
     return (
       <div>
-        <LoginNav />
+        <Header />
         <div id="app_secondcontainer">
           <form className="form box" onSubmit={this.submit}>
             <h1 className="title is-2 has-text-centered">Login</h1>

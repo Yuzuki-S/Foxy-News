@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from './Nav';
 import { Link } from 'react-router-dom';
 
-class LoginNav extends React.Component {
+class Header extends React.Component {
   render() {
     return (
       <div id="LoginNav_firstcontainer" className="container has-text-centered">
@@ -25,4 +25,4 @@ class LoginNav extends React.Component {
   }
 }
 
-export default LoginNav;
+export default Header;
