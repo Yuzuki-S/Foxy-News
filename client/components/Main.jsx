@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import UserList from './UserList';
 import AttendeesList from './AttendeesList';
 import TimerBox from './TimerBox';
-import CostPerHour from './CostPerHour';
 import MainStats from './MainStats';
 
 // Main Layout page

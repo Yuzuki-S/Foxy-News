@@ -5,10 +5,14 @@ import ArticlewithFox from './ArticlewithFox';
 class Home extends React.Component {
   render() {
     return (
-      <div>
-        <Header />
-        Breaking News!
-        <ArticlewithFox />
+      <div id="LoginNav_firstcontainer" className="container has-text-centered">
+        <div id="home_Hero">
+          <Header />
+          <div>
+            <h1>Breaking News!</h1>
+            <ArticlewithFox />
+          </div>
+        </div>
       </div>
     );
   }
