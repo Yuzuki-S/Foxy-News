@@ -7,12 +7,13 @@ export function receiveImage() {
 }
 
 export function getImage() {
-  return dispatch => {
-    dispatch(requestImage());
-    return request.get('https://randomfox.ca/floof/').then(ApiRes => {
-      console.log('I am in action', ApiRes);
-    });
-  };
+  console.log('I am in action');
+  // return dispatch => {
+  //   dispatch(requestImage());
+  //   return request.get('https://randomfox.ca/floof/').then(ApiRes => {
+  //     console.log('I am in action', ApiRes);
+  //   });
+  // };
 }
 
 // return (dispatch) => {
