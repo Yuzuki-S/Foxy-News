@@ -7,7 +7,7 @@ class ArticlewithFox extends React.Component {
     super(props);
   }
   componentDidMount() {
-    this.props.dispatch(getImage());
+    this.props.showImage();
   }
   render() {
     return (
@@ -24,12 +24,13 @@ function mapStateToProps(state) {
   console.log(state);
   return state;
 }
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     showImage: () => {
-//       dispatch(getImage());
-//     }
-//   };
-// };
+const mapDispatchToProps = dispatch => ({
+  showImage: () => {
+    dispatch(getImage());
+  }
+});
 
-export default connect(mapStateToProps)(ArticlewithFox);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ArticlewithFox);
