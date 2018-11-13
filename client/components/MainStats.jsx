@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import AttendeesList from './AttendeesList'
 // import MeetingUsersList from './MeetingUsersList'
 
 // Main Layout page

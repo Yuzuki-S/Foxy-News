@@ -16,7 +16,7 @@ server.use(express.static(path.join(__dirname, '../public')));
 server.use('/api/auth', require('./routes/auth'));
 server.use('/api/meetings', require('./routes/meetings'));
 server.use('/api/users', require('./routes/users'));
-server.use('/api/foximage', require('./routes/foximage'));
+server.use('/foximage', require('./routes/foximage'));
 
 server.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'));

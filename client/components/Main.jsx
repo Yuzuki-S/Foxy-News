@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserList from './UserList';
-import AttendeesList from './AttendeesList';
 import MainStats from './MainStats';
 
 // Main Layout page
