@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import UserList from './UserList';
 import AttendeesList from './AttendeesList';
-import TimerBox from './TimerBox';
 import MainStats from './MainStats';
 
 // Main Layout page

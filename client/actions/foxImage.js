@@ -1,34 +1,37 @@
-export function requestImage() {
-  type: 'REQUEST_IMAGE';
-}
+import request from 'superagent';
+const REQUEST_IMAGE = 'REQUEST_IMAGE';
+const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
 
-export function receiveImage() {
-  type: 'RECEIVE_IMAGE';
-}
+export const requestImage = () => {
+  return {
+    type: REQUEST_IMAGE
+  };
+};
+
+export const receiveImage = () => {
+  return {
+    type: RECEIVE_IMAGE
+  };
+};
+
+export const showError = errorMessage => {
+  return {
+    type: 'SHOW_ERROR',
+    errorMessage: errorMessage
+  };
+};
 
 export function getImage() {
-  console.log('I am in action');
-  // return dispatch => {
-  //   dispatch(requestImage());
-  //   return request.get('https://randomfox.ca/floof/').then(ApiRes => {
-  //     console.log('I am in action', ApiRes);
-  //   });
-  // };
+  return dispatch => {
+    dispatch(requestImage());
+    console.log('Hi2');
+    return request
+      .get('/foximage')
+      .then(res => {
+        console.log('action', res);
+      })
+      .catch(err => {
+        dispatch(showError(err.message));
+      });
+  };
 }
-
-// return (dispatch) => {
-//     dispatch(requestImage())
-//     return request
-//     .get(`http://shibe.online/api/shibes?count=[1-100]`)
-//     .then(ApiRes => {
-
-//       console.log(ApiRes.body);
-//       dispatch(receiveImage(ApiRes.body))
-
-//       console.log("Hi");
-//     })
-//     .catch(err => {
-//       dispatch(err.message)
-//     })
-//   }
-// }
