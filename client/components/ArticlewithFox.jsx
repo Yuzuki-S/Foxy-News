@@ -12,7 +12,7 @@ class ArticlewithFox extends React.Component {
   render() {
     return (
       <div>
-        <img />
+        <img src={this.props.foxImage}/>
         <div>Image above</div>
         <div>Article here</div>
       </div>

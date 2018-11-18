@@ -1,6 +1,6 @@
 import request from 'superagent';
 const REQUEST_IMAGE = 'REQUEST_IMAGE';
-const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
+export const RECEIVE_IMAGE = 'RECEIVE_IMAGE';
 
 export const requestImage = () => {
   return {
@@ -8,9 +8,10 @@ export const requestImage = () => {
   };
 };
 
-export const receiveImage = () => {
+export const receiveImage = (fox) => {
   return {
-    type: RECEIVE_IMAGE
+    type: RECEIVE_IMAGE,
+    image:fox
   };
 };
 
@@ -24,11 +25,10 @@ export const showError = errorMessage => {
 export function getImage() {
   return dispatch => {
     dispatch(requestImage());
-    console.log('Hi2');
     return request
       .get('/foximage')
       .then(res => {
-        console.log('action', res);
+        dispatch(receiveImage(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message));

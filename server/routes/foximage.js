@@ -6,7 +6,6 @@ router.get('/', (req, res) => {
   request
     .get('https://randomfox.ca/floof/')
     .then(ApiRes => {
-      console.log('routes', ApiRes);
       res.json(ApiRes.body.image);
     })
     .catch(err => {
