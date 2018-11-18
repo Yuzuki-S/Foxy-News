@@ -2,7 +2,6 @@ const router = require('express').Router();
 const request = require('superagent');
 
 router.get('/', (req, res) => {
-  console.log('hit the route');
   request
     .get('https://randomfox.ca/floof/')
     .then(ApiRes => {
