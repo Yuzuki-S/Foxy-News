@@ -9,7 +9,7 @@ class Home extends React.Component {
         <div id="home_Hero">
           <Header />
           <div>
-            <h1>Breaking News!</h1>
+            <h1 id="home_title">BREAKING NEWS!</h1>
             <ArticlewithFox />
           </div>
         </div>

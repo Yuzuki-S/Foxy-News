@@ -121,6 +121,12 @@
   padding: 30px;
 }
 
+#home_title{
+  font-size: 70px;
+  font-family: 'Merriweather', serif;
+  font-weight:bold;
+}
+
 /* History styles */
 /* *********** */
 
@@ -177,3 +183,7 @@
 #attendeesviewcontainer {
   margin-top: 10%;
 }
+
+
+/*ArticlewithFox component*/
+/******************************/
